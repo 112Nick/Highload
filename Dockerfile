@@ -27,4 +27,4 @@ RUN mvn package
 # Объявлем порт сервера
 EXPOSE 80
 
-CMD java -jar $WORK/java/target/Highload-1.0-SNAPSHOT.jar
+CMD java -jar $WORK/java/target/webServer-1.0-SNAPSHOT.jar
