@@ -143,7 +143,7 @@ class ResponseSender(private val socket: Socket) : Runnable {
             out.write(responseHeader)
             out.flush()
         } catch (e: Exception) {
-            println("bufferedReader sendHeader" + e.message)
+            //println("bufferedReader sendHeader" + e.message)
         }
 
     }
