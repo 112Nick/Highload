@@ -1,3 +1,5 @@
+package main.kotlin
+
 import java.io.BufferedReader
 import java.io.FileInputStream
 import java.io.IOException
@@ -6,7 +8,6 @@ import java.net.ServerSocket
 
 
 object Server {
-
     private const val PATH_TO_CONFIG = "./httpd.config"
 
     private var PORT = 8080
@@ -26,12 +27,12 @@ object Server {
             } catch (e: Exception) {
                 break
             }
-            val maps = strLine.split(":")
-            if (maps[0] == "Listen") {
+            val maps = strLine.split(" ")
+            if (maps[0] == "listen") {
                 PORT = Integer.parseInt(maps[1])
                 println(PORT)
             }
-            if (maps[0] == "threads_max") {
+            if (maps[0] == "cpu_limit") {
                 println(Integer.parseInt(maps[1]))
                 MAX_THREADS = Integer.parseInt(maps[1])
             }
