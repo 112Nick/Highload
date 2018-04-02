@@ -32,7 +32,7 @@ object Server {
                 PORT = Integer.parseInt(maps[1])
                 println(PORT)
             }
-            if (maps[0] == "cpu_limit") {
+            if (maps[0] == "thread_limit") {
                 println(Integer.parseInt(maps[1]))
                 MAX_THREADS = Integer.parseInt(maps[1])
             }
@@ -57,6 +57,7 @@ object Server {
             val socket = s.accept()
             val rs = ResponseSender(socket)
             threadPool.execute(rs)
+
         }
     }
 }
